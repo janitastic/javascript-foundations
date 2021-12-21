@@ -8,8 +8,8 @@ class Golfer {
 
   calculateAvg(par) {
     var averageScore = this.handicap + par;
-  console.log(averageScore);
-    return `I usually shoot a ${averageScore} on average.`
+  // console.log(averageScore);
+    return `I usually shoot a ${averageScore} on average.`;
   }
 
   playRound(golfCourse) {
@@ -25,19 +25,19 @@ class Golfer {
   }
 
   marvel(golfCourse) {
-    return `I love the ${golfCourse.features[0]} and ${golfCourse.features[1]} on this course!`
+    return `I love the ${golfCourse.features[0]} and ${golfCourse.features[1]} on this course!`;
   }
 
   whatYaShoot(score) {
     if (score < 0) {
       this.frustration = 0;
-      return 'I AM THE GREATEST GOLFER ALIVE!'
+      return 'I AM THE GREATEST GOLFER ALIVE!';
     } else if (score === 0) {
       this.frustration -= 10;
-      return 'Booyah!'
+      return 'Booyah!';
     } else if (score > 0) {
       this.frustration += 20;
-      return 'Doh!'
+      return 'Doh!';
     }
   }
 }

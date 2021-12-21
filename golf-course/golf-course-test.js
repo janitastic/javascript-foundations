@@ -19,7 +19,7 @@ describe('Golf Course', function () {
   it('should have some unique features', function () {
     var golfCourse1 = new GolfCourse('Arrowhead', 'hard', 42, ['great views', 'wildlife']);
     var golfCourse2 = new GolfCourse('Bay Hill', 'hard', 11, ['water', 'Arnies Place']);
-  console.log(golfCourse1);
+  // console.log(golfCourse1);
     assert.deepEqual(golfCourse1.features, ['great views', 'wildlife']);
     assert.deepEqual(golfCourse2.features, ['water', 'Arnies Place']);
   });
@@ -97,7 +97,7 @@ describe('Golfer', function () {
 
     var par1 = 72;
     var par2 = 75;
-console.log('1 average', golfer1.calculateAvg(par1));
+// console.log('1 average', golfer1.calculateAvg(par1));
     assert.equal(golfer1.calculateAvg(par1), 'I usually shoot a 76 on average.');
     assert.equal(golfer2.calculateAvg(par2), 'I usually shoot a 85 on average.');
   });
@@ -111,7 +111,7 @@ console.log('1 average', golfer1.calculateAvg(par1));
     golfer1.playRound(golfCourse1);
     //Thomas playd Bear Dance course and came out 500 frustrated
       //this was also a hard difficulty
-  console.log(golfCourse1.difficulty);
+  // console.log(golfCourse1.difficulty);
     assert.equal(golfer1.frustration, 500);
 
     golfer2.playRound(golfCourse2);
@@ -140,7 +140,7 @@ console.log('1 average', golfer1.calculateAvg(par1));
   it('should be able to marvel at the features of a golf course', function () {
     var golfer4 = new Golfer({ name: 'Khalid', handicap: 6 });
     var golfCourse1 = new GolfCourse('Arrowhead', 'hard', 42, ['great views', 'wildlife'])
-  console.log(golfCourse1)
+  // console.log(golfCourse1)
     var golfer5 = new Golfer({ name: 'Amy', handicap: 3 });
     var golfCourse2 = new GolfCourse('Arrowhead', 'hard', 42, ['undulating greens', 'creative layout'])
 
@@ -159,17 +159,17 @@ console.log('1 average', golfer1.calculateAvg(par1));
   //frustration starts at 0, not frustrated
     var shot1 = golfer1.whatYaShoot(4);//scored good < 0
     assert.equal(golfer1.frustration, 20);//some frustrated + 20
-  console.log('161', golfer1.frustration);
+  // console.log('161', golfer1.frustration);
     assert.equal(shot1, 'Doh!');//return
 
     var shot2 = golfer1.whatYaShoot(0);//excellent === 0
     assert.equal(golfer1.frustration, 10); //less frustrated + 10
-  console.log('166', golfer1.frustration);
+  // console.log('166', golfer1.frustration);
     assert.equal(shot2, 'Booyah!');
 
     var shot3 = golfer1.whatYaShoot(2); //bad, > 0
     assert.equal(golfer1.frustration, 30); //more frustrated
-  console.log('171', golfer1.frustration);
+  // console.log('171', golfer1.frustration);
     assert.equal(shot3, 'Doh!');
 
     var shot4 = golfer1.whatYaShoot(-2);//awesome, < 0
@@ -178,7 +178,7 @@ console.log('1 average', golfer1.calculateAvg(par1));
 
     var shot5 = golfer1.whatYaShoot(3); //bad, > 0
     assert.equal(golfer1.frustration, 20);
-  console.log('180', golfer1.frustration);
+  // console.log('180', golfer1.frustration);
     assert.equal(shot5, 'Doh!');
 
     var shot6 = golfer1.whatYaShoot(-1); //awesome, < 0

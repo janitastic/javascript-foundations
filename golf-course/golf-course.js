@@ -9,13 +9,13 @@ class GolfCourse {
 
   checkInGroup(group) {
     if (this.openings < group.length) {
-      return 'Sorry, we are currently booked! Please come back later.'
+      return 'Sorry, we are currently booked! Please come back later.';
     }
       this.openings -= group.length;
       for (var i = 0; i < group.length; i++) {
       this.currentlyPlaying.unshift(group[i].name);
     }
-    return 'You\'re checked in. Have fun!'
+    return 'You\'re checked in. Have fun!';
   }
 }
 
