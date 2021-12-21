@@ -3,7 +3,7 @@ var assert = require('chai').assert;
 
 describe("Snack", function() {
 
-  it.skip('should have a name and price per unit', function() {
+  it('should have a name and price per unit', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
@@ -14,7 +14,7 @@ describe("Snack", function() {
     assert.equal(chips.price, 1.00);
   })
 
-  it.skip('should not start with any items in stock', function() {
+  it('should not start with any items in stock', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
@@ -22,18 +22,18 @@ describe("Snack", function() {
     assert.equal(chips.itemsInStock, 0);
   })
 
-  it.skip('should be able to add to stock', function() {
+  it('should be able to add to stock', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
-    candyBar.stockItems(5);
+    candyBar.stockItems(5);//method, with param of 5
     chips.stockItems(3);
 
     assert.equal(candyBar.itemsInStock, 5);
     assert.equal(chips.itemsInStock, 3);
   })
 
-  it.skip('should be able to keep adding to stock', function() {
+  it('should be able to keep adding to stock', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
@@ -46,21 +46,21 @@ describe("Snack", function() {
     assert.equal(chips.itemsInStock, 15);
   })
 
-  it.skip('should be able to remove one item at a time from stock', function() {
+  it('should be able to remove one item at a time from stock', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
     candyBar.stockItems(7);
     chips.stockItems(3);
 
-    assert.equal(candyBar.removeItem(), 'Item taken! There are now 6 items left.');
+    assert.equal(candyBar.removeItem(), 'Item taken! There are now 6 items left.');//new method, returns a sentence and new quantity
     assert.equal(candyBar.itemsInStock, 6);
 
     assert.equal(chips.removeItem(), 'Item taken! There are now 2 items left.');
     assert.equal(chips.itemsInStock, 2);
   })
 
-  it.skip('should not be able to remove anything from stock if none left', function() {
+  it('should not be able to remove anything from stock if none left', function() {
     var candyBar = new Snack('hersey\'s milk chocolate', 0.75);
     var chips = new Snack('lay\'s sour cream and onion chips', 1.00);
 
@@ -79,6 +79,8 @@ describe("Snack", function() {
     candyBar.removeItem();
 
     assert.equal(candyBar.itemsInStock, 0);
+    //if 0, then cannot removeItem
+    //return sentence
     assert.equal(candyBar.removeItem(), 'Sorry, no hersey\'s milk chocolate left in stock!')
 
     assert.equal(chips.removeItem(), 'Sorry, no lay\'s sour cream and onion chips left in stock!')
