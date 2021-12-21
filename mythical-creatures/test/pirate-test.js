@@ -70,11 +70,11 @@ describe('Pirate', function() {
     pirate.robShip();
     pirate.robShip();
     pirate.robShip();
-
+//if > 500 = 'Arg'
     assert.equal(pirate.booty, 500);
 
     pirate.robShip();
-
+  //& this.cursed = true;
     assert.equal(pirate.booty, 500);
     assert.equal(pirate.cursed, true);
     assert.equal(pirate.robShip(), 'ARG! I\'ve been cursed!');
@@ -86,11 +86,14 @@ describe('Pirate', function() {
     function timeTravel() {
       for(var i = 0; i < 6; i++) {
         pirate.robShip();
+      // console.log(pirate.booty);
       }
     }
-
+  //new method - what do I do with this one?
     timeTravel();
-
+    //new method liftCurse()
+          //this.booty = 200
+          //this.cursed = false
     assert.equal(pirate.liftCurse(), 'Your curse has been lifted!');
     assert.equal(pirate.booty, 200);
     assert.equal(pirate.cursed, false);
